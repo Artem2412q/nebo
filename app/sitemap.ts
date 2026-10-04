@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next";
+export default function sitemap(): MetadataRoute.Sitemap { const base=process.env.NEXT_PUBLIC_SITE_URL||"https://xn----8sbbobb2a2ad3bd1j.xn--p1ai"; return ["","/menu","/events","/private","/atmosphere","/about","/contacts","/book","/privacy"].map(route=>({url:`${base}${route}`,lastModified:new Date(),changeFrequency:route==="/events"?"daily":"weekly",priority:route===""?1:.7})); }
